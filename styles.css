@@ -8,6 +8,13 @@
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
+mark{
+  background-color:pink;
+}
+
+#footer{
+  font-size:80%;
+}
 
 body,
 html {
@@ -46,11 +53,14 @@ body {
   margin-left: -.3rem;
 }
 
+.percentage{
+  line-height: 2rem;
+}
 label {
   display: block;
 }
 footer {
-  
+
     width: 640px;
     margin: 0% -320px;
     position: fixed;
