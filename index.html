@@ -3,39 +3,43 @@
 <header>
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>Be Productive, Matt.</title>
 </header>
-<body>
-<center>
-<div id="mortality"  class='count'>Welp. We all die eventually.</div>
-<footer id='footer'>
-  
-</footer>
-</center>
 
-<script>
-function checkTime(i) {
-if (i < 10) {
-  i = "0" + i;
-}
-return i;
-}
+<body>  
+  Your age is...
+  <div id="mortality"  class='count'>Welp. We all die eventually.</div>
+  <div id="percentage" class='percentage'></div>
 
-function startMortality() {
-  var today = new Date();
-  var n = ((today.getTime()-895858457000)/31536000000).toString().substring(0,12);
-  var numbers = n.split(".");
-  document.getElementById('mortality').innerHTML = "<b>"+numbers[0]+"</b><sup>."+numbers[1]+"</sup>";
-  t = setTimeout(function() {var today = new Date();
-    startMortality()
-  }, 100);
+  <center><footer id='footer'></footer></center>
 
+  <script>
+    function checkTime(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+    }
 
-}
+    function startMortality() {
+      var today = new Date();
+      var num = ((today.getTime()-895858457000)/31536000000);
+      var n = num.toString().substring(0,12);
+      var p = (num/84.2).toString().split(".")[1];
+      var percentage =  "You're <mark><b>"+p.substring(0,2)+"</b><sup>."+p.substring(2,12)+"%</sup></mark> of the way through";
+      var numbers = n.split(".");
+      document.getElementById('mortality').innerHTML = "<b>"+numbers[0]+"</b><sup>."+numbers[1]+"</sup>";
+      document.getElementById('percentage').innerHTML = percentage;
+      t = setTimeout(function() {var today = new Date();
+        startMortality()
+      }, 100);
+    }
 
-startMortality();
- document.getElementById('footer').innerHTML = "Recreated with love by Matt Fan";
- /* So that if js takes too long to load, only thing on screen is existential placeholder*/
-</script>
+    startMortality();
+    document.getElementById('footer').innerHTML = "Recreated with love by Matt Fan";
+    /* So that if js takes too long to load, only thing on screen is existential placeholder*/
+  </script>
 </body>
 </html>
+
