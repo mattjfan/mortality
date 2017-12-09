@@ -8,8 +8,8 @@
 <body>
 <center>
 <div id="mortality"  class='count'>Welp. We all die eventually.</div>
-<footer>
-  Recreated with love by Matt Fan
+<footer class='footer'>
+  
 </footer>
 </center>
 
@@ -34,6 +34,8 @@ function startMortality() {
 }
 
 startMortality();
+ document.getElementById('footer').innerHTML = "Recreated with love by Matt Fan";
+ /* So that if js takes too long to load, only thing on screen is existential placeholder*/
 </script>
 </body>
 </html>
