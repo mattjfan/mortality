@@ -14,6 +14,9 @@
 </center>
 
 <script>
+var monthOB = 5;
+var dateOB = 18;
+var yearOB = 1998;
 
 function checkTime(i) {
 if (i < 10) {
@@ -22,6 +25,19 @@ if (i < 10) {
 return i;
 }
 
+function startTime() {
+var today = new Date();
+var h = today.getHours();
+var m = today.getMinutes();
+var s = today.getSeconds();
+// add a zero in front of numbers<10
+m = checkTime(m);
+s = checkTime(s);
+document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+t = setTimeout(function() {
+  startTime()
+}, 500);
+}
 
 function startMortality() {
   var today = new Date();
@@ -31,6 +47,8 @@ function startMortality() {
   t = setTimeout(function() {var today = new Date();
     startMortality()
   }, 100);
+
+
 }
 
 startMortality();
