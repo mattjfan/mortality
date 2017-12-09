@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+  <link href="mortality.css" rel="stylesheet">
+
+</header>
+<body>
+<center>
+<div id="mortality"  class='count'>Welp. We all die eventually.</div>
+<footer>
+  Recreated with love by Matt Fan
+</footer>
+</center>
+
+<script>
+
+function checkTime(i) {
+if (i < 10) {
+  i = "0" + i;
+}
+return i;
+}
+
+
+function startMortality() {
+  var today = new Date();
+  var n = ((today.getTime()-895858457000)/31536000000).toString().substring(0,12);
+  var numbers = n.split(".");
+  document.getElementById('mortality').innerHTML = "<b>"+numbers[0]+"</b><sup>."+numbers[1]+"</sup>";
+  t = setTimeout(function() {var today = new Date();
+    startMortality()
+  }, 100);
+}
+
+startMortality();
+</script>
+</body>
+</html>
