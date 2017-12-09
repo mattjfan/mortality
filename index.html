@@ -2,7 +2,7 @@
 <html>
 <header>
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
-  <link href="mortality.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
 
 </header>
 <body>
@@ -14,29 +14,11 @@
 </center>
 
 <script>
-var monthOB = 5;
-var dateOB = 18;
-var yearOB = 1998;
-
 function checkTime(i) {
 if (i < 10) {
   i = "0" + i;
 }
 return i;
-}
-
-function startTime() {
-var today = new Date();
-var h = today.getHours();
-var m = today.getMinutes();
-var s = today.getSeconds();
-// add a zero in front of numbers<10
-m = checkTime(m);
-s = checkTime(s);
-document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-t = setTimeout(function() {
-  startTime()
-}, 500);
 }
 
 function startMortality() {
