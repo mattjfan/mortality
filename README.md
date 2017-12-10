@@ -10,8 +10,7 @@ But I wanted a motivation-style age timer. So I made my own.
 ## Setting Up
 Want to use it for yourself? It's pretty rough, but here's how to do it:
 1) Fork the repository.
-2) Modify the subtracted element in the variable n in index.html (on my **To-do** to fix in the near future).
-   I used 'motivation' as a cross-reference for my constants.
+2) Modify the key variable values in the <script> section of index.html
 3) In Firefox Quantum, go to 'about:preferences' (or click on options to be brought there) and:
     -  Select 'Show your home page' under the 'when firefox starts' item.
     -  In homepage, paste wherever you're hosting the app. For me, I'm using Github pages, so it's "mattfan.me/mortality"
