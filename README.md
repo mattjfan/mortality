@@ -17,6 +17,5 @@ Want to use it for yourself? It's pretty rough, but here's how to do it:
     -  In homepage, paste wherever you're hosting the app. For me, I'm using Github pages, so it's "mattfan.me/mortality"
 
 ## Issues
-- Rudimentary current age calculation. Not a big issue rn, since it's mainly for personal use, but will make it more flexible and easier to fork in the future.
 - Only shows on start-up. As far as I know, this is a limitation with Firefox Quantum, which I can't fix. Will update when this changes.
 - Still has source URL in search/nav bar on load. Again, I think this is a limitation with Firefox Quantum, will fix when able.
