@@ -15,7 +15,10 @@ mark{
 #footer{
   font-size:80%;
 }
-
+img{
+  max-height:30%;
+  max-width:30%;
+}
 body,
 html {
   margin: 0;
