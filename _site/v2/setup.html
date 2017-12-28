@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+  <link href="/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+  <title>Set up Mortality!</title>
+</header>
+
+<body>
+  <div class='container'>
+  <form>
+
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Name</label>
+      <div class="col-10">
+        <input class="form-control" type="text" value="Matt" id="example-text-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label">Birthday</label>
+      <div class="col-10">
+        <input class="form-control" type="date" value="1998-05-18" id="example-date-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-color-input" class="col-2 col-form-label">Background Color</label>
+      <div class="col-4">
+        <input class="form-control" type="color" value="#FFFFFF" id="example-color-input">
+      </div>
+      <label for="example-color-input" class="col-2 col-form-label text-right">Text Color</label>
+      <div class="col-4">
+        <input class="form-control" type="color" value="#000000" id="example-color-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label" for="inlineFormCustomSelect">Gender</label>
+       <select class="custom-select col-10" id="inlineFormCustomSelect" >
+         <option selected>Choose...</option>
+         <option value="1">Male</option>
+         <option value="2">Female</option>
+       </select>
+    </div>
+    <div class="form-group row">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary btn-block">Get Started!</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

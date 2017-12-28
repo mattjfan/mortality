@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+  <link href="styles.css" rel="stylesheet">
+  <title>Mortality</title>
+  <meta charset='utf-8'>
+</header>
+
+<body>
+  <div id ='main' style='width:100%'></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script>
+if (localStorage.getItem("detailsSet") === null) {
+  document.title="Set up Mortality!";
+  document.getElementById('main').innerHTML=
+  `
+    <div class='container'>
+      <form id='setup'>
+
+        <div class="form-group row">
+          <label for="name" class="col-2 col-form-label">Name</label>
+          <div class="col-10">
+            <input class="form-control" type="text" value="Matt" id="name">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="dob" class="col-2 col-form-label">Birthday</label>
+          <div class="col-10">
+            <input class="form-control" type="date" value="1998-05-18" id="dob">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="colorBG" class="col-2 col-form-label">Background Color</label>
+          <div class="col-4">
+            <input class="form-control" type="color" value="#FFFFFF" id="colorBG">
+          </div>
+          <label for="color1" class="col-2 col-form-label text-right">Text Color</label>
+          <div class="col-4">
+            <input class="form-control" type="color" value="#000000" id="color1">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label" for="gender">Gender</label>
+           <select class="custom-select col-10" id="gender" >
+             <option selected>Choose...</option>
+             <option value="1">Male</option>
+             <option value="2">Female</option>
+           </select>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block" id='submit'>Get Started!</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  `;
+}else {
+  //load variables
+  var name = localStorage.getItem('name');
+  document.title="Be productive, "+name;
+
+  var year = localStorage.getItem('year');
+  var month = localStorage.getItem('month');
+  var day = localStorage.getItem('day');
+
+  var colorBG = localStorage.getItem('colorBG');
+  var color1 = localStorage.getItem('color1');
+  $("body").css("background-color",colorBG);
+  $("body").css("color",color1);
+  $("mark").css("background-color",color1);
+  $("mark").css("color",colorBG);
+
+  var expectedAge = localStorage.getItem('expectedAge');
+  var showPercentage = localStorage.getItem('showPercentage');
+
+
+  document.getElementById('main').innerHTML=
+  `
+  <center>
+  <div id ="myLabel"></div>
+  <div id="mortality"  class='count'>Welp. We all die eventually.</div>
+  <div id="percentage" class='percentage'></div>
+  <footer id='footer'></footer></center>
+  `;
+}
+
+$('#submit').on('click',function(){
+  console.log('clicked');
+  //console.log(document.getElementById("dob").value);
+  var formDOB = $('#dob').val().split("-");//processing dob form data
+  localStorage.setItem('name', $('#name').val());
+  localStorage.setItem('year', parseInt(formDOB[0]));
+  localStorage.setItem('month', parseInt(formDOB[1])-1);
+  localStorage.setItem('day', parseInt(formDOB[2]));
+  localStorage.setItem('colorBG', $('#colorBG').val());
+  localStorage.setItem('color1', $('#color1').val());
+  var formGender = $('#gender').val()
+  localStorage.setItem('showPercentage', true);
+
+  if (formGender == 1){
+    localStorage.setItem('expectedAge', 76.1);
+  }else if (formGender == 2){
+    localStorage.setItem('expectedAge', 81.1);
+  }else{
+    localStorage.setItem('showPercentage', false);
+  }
+  localStorage.setItem('detailsSet','true');
+})
+</script>
+<script src='scripts.js'></script>
+</body>
+</html>

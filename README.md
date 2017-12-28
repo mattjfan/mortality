@@ -1,6 +1,6 @@
 # Mortality
 Simple age timer for me, so I can have a 'motivation' chrome plug-in style new tab page for firefox quantum.
-Link to original here: https://chrome.google.com/webstore/detail/motivation/ofdgfpchbidcgncgfpdlpclnpaemakoj?hl=en
+Link to original [here](https://chrome.google.com/webstore/detail/motivation/ofdgfpchbidcgncgfpdlpclnpaemakoj?hl=en)
 
 ## Problem
 Currently, firefox doesn't have fine-grained controls on custom new-tab pages (as far as I know).
@@ -18,3 +18,7 @@ Want to use it for yourself? It's pretty rough, but here's how to do it:
 ## Issues
 - Only shows on start-up. As far as I know, this is a limitation with Firefox Quantum, which I can't fix. Will update when this changes.
 - Still has source URL in search/nav bar on load. Again, I think this is a limitation with Firefox Quantum, will fix when able.
+
+##V2
+Still rough, but includes a GUI to customize the details without forking. You can try it out [here](http://mattfan.me/mortality/v2).
+If you want to change the variables, they're stored in your localStorage.
