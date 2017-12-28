@@ -18,7 +18,8 @@ Want to use it for yourself? It's pretty rough, but here's how to do it:
 ## Issues
 - Only shows on start-up. As far as I know, this is a limitation with Firefox Quantum, which I can't fix. Will update when this changes.
 - Still has source URL in search/nav bar on load. Again, I think this is a limitation with Firefox Quantum, will fix when able.
+- No options button to change settings for V2 (use localStorage)
 
-##V2
+## V2
 Still rough, but includes a GUI to customize the details without forking. You can try it out [here](http://mattfan.me/mortality/v2).
 If you want to change the variables, they're stored in your localStorage.
